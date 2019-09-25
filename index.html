@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Slide Show</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			margin-top: 70px;
+		}
+	</style>
+<!-- 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3" style="width: 18rem;"> 
+			  <div class="card-body">
+			    <h5 class="card-title display-4 text-center mb-2">Photo Slide Show</h5>
+			    <img name="slideshow" style="width: 31rem; height: 20rem;">
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var i = 0; //start point
+		var image = []; //empty array variable
+		var time = 3000; //slide changing time variable
+
+		//photo list
+		image[0] = 'photo/photo1.jpg';
+		image[1] = 'photo/photo2.jpg';
+		image[2] = 'photo/photo3.jpg';
+		image[3] = 'photo/photo4.jpg';
+		image[4] = 'photo/photo5.jpeg';
+
+		//photo change function
+		function changeImg(){
+			document.slideshow.src = image[i];
+
+			if (i < image.length - 1) {
+				i++;
+			}
+			else{
+				i = 0;
+			}
+			setTimeout("changeImg()",time);
+		}
+		window.onload  = changeImg;
+
+	</script>
+</body>
+</html>
